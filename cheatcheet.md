@@ -1,7 +1,10 @@
 guide : in this link doc number of '*' show importance degree of doc 
 
-#cluster Monitoring of Toman
-prometheus link: https://www.howtoforge.com/tutorial/monitor-ubuntu-server-with-prometheus/
+**cluster Monitoring of Toman**
+
+[prometheus]: https://www.howtoforge.com/tutorial/monitor-ubuntu-server-with-prometheus/
+
+ 
 grafana install link: http://docs.grafana.org/installation/debian/
 Alertmanager: https://petargitnik.github.io/blog/2018/01/03/how-to-install-alertmanager-on-ubuntu-16.04
 use 'dd if=/dev/zero of=/dev/null' command for make 100% usage of one core of cpu
