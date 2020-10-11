@@ -1,0 +1,135 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    template.alpha.openshift.io/wait-for-ready: "true"
+  creationTimestamp: 2020-09-26T23:37:41Z
+  generation: 2
+  labels:
+    app: mysql-persistent
+    template: mysql-persistent-template
+  name: accounts-mysql
+  namespace: karafarin-backend
+  resourceVersion: "3279111"
+  selfLink: /apis/apps.openshift.io/v1/namespaces/karafarin-backend/deploymentconfigs/accounts-mysql
+  uid: 453452d0-0051-11eb-8755-000c297c3a2d
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    name: accounts-mysql
+  strategy:
+    activeDeadlineSeconds: 21600
+    recreateParams:
+      timeoutSeconds: 600
+    resources: {}
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: accounts-mysql
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              key: database-user
+              name: accounts-mysql
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: database-password
+              name: accounts-mysql
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: database-root-password
+              name: accounts-mysql
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              key: database-name
+              name: accounts-mysql
+        image: 172.30.1.1:5000/openshift/mysql@sha256:e08ee4d43b7356607685b69bde6335e27cf20c020f345b6c6c59400183882764
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 3306
+          timeoutSeconds: 1
+        name: mysql
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -i
+            - -c
+            - MYSQL_PWD="$MYSQL_PASSWORD" mysql -h 127.0.0.1 -u $MYSQL_USER -D $MYSQL_DATABASE
+              -e 'SELECT 1'
+          failureThreshold: 3
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/mysql/data
+          name: accounts-mysql-data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: accounts-mysql-data
+        persistentVolumeClaim:
+          claimName: accounts-mysql
+  test: false
+  triggers:
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - mysql
+      from:
+        kind: ImageStreamTag
+        name: mysql:5.7
+        namespace: openshift
+      lastTriggeredImage: 172.30.1.1:5000/openshift/mysql@sha256:e08ee4d43b7356607685b69bde6335e27cf20c020f345b6c6c59400183882764
+    type: ImageChange
+  - type: ConfigChange
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: 2020-09-26T23:38:34Z
+    lastUpdateTime: 2020-09-26T23:38:34Z
+    message: Deployment config has minimum availability.
+    status: "True"
+    type: Available
+  - lastTransitionTime: 2020-09-26T23:38:35Z
+    lastUpdateTime: 2020-09-26T23:38:35Z
+    message: replication controller "accounts-mysql-1" successfully rolled out
+    reason: NewReplicationControllerAvailable
+    status: "True"
+    type: Progressing
+  details:
+    causes:
+    - type: ConfigChange
+    message: config change
+  latestVersion: 1
+  observedGeneration: 2
+  readyReplicas: 1
+  replicas: 1
+  unavailableReplicas: 0
+  updatedReplicas: 1

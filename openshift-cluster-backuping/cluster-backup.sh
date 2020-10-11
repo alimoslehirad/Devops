@@ -5,7 +5,7 @@ mkdir $(date +"%d-%m-%Y")
 OPENSHIFT_COM=(DeploymentConfig replicationcontroller buildconfig route service )
 for ns in `oc get ns | awk '{print $1}'`  
 do
-	if [ $ns -eq "NAME"  ]
+	if [ "$ns" == "NAME"  ]
 	then
 		continue
 	fi
@@ -14,7 +14,7 @@ do
 	for component_type in ${OPENSHIFT_COM[@]}
 	do	
 		
-		if [ $component_type -eq "NAME" ]
+		if [ "$component_type" == "NAME" ]
 		then
 			continue
 		fi
@@ -23,7 +23,7 @@ do
 		for components in `oc -n $ns get $component_type | awk '{print $1}'`
 		do
 			#touch $(date +"%d-%m-%Y")/$ns/$component_type/$components.yaml
-			if [ $components -eq "NAME" ]
+			if [ "$components" == "NAME" ]
 			then
 				continue
 			fi

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    prometheus.io/scheme: https
+    prometheus.io/scrape: "true"
+    service.alpha.openshift.io/serving-cert-secret-name: service-serving-cert-signer-serving-cert
+    service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1599894671
+  creationTimestamp: 2020-09-12T07:12:24Z
+  name: service-serving-cert-signer
+  namespace: openshift-service-cert-signer
+  resourceVersion: "490"
+  selfLink: /api/v1/namespaces/openshift-service-cert-signer/services/service-serving-cert-signer
+  uid: 4e7ec559-f4c7-11ea-97ad-000c297c3a2d
+spec:
+  clusterIP: 172.30.90.158
+  ports:
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    service-serving-cert-signer: "true"
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

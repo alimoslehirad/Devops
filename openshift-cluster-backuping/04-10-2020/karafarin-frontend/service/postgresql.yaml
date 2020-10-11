@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    template.openshift.io/expose-uri: postgres://{.spec.clusterIP}:{.spec.ports[?(.name=="postgresql")].port}
+  creationTimestamp: 2020-09-13T06:25:11Z
+  labels:
+    app: postgresql-persistent
+    template: postgresql-persistent-template
+  name: postgresql
+  namespace: karafarin-frontend
+  resourceVersion: "336910"
+  selfLink: /api/v1/namespaces/karafarin-frontend/services/postgresql
+  uid: e0a01e13-f589-11ea-97ad-000c297c3a2d
+spec:
+  clusterIP: 172.30.189.51
+  ports:
+  - name: postgresql
+    port: 5432
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    name: postgresql
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

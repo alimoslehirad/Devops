@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: 2020-09-16T07:19:16Z
+  labels:
+    app: karafarin-backend
+  name: karafarin-backend
+  namespace: karafarin-backend
+  resourceVersion: "3188773"
+  selfLink: /api/v1/namespaces/karafarin-backend/services/karafarin-backend
+  uid: ee073122-f7ec-11ea-97ad-000c297c3a2d
+spec:
+  clusterIP: 172.30.179.249
+  ports:
+  - name: 8000-tcp
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    deploymentconfig: karafarin-backend
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,165 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  annotations:
+    openshift.io/deployer-pod.completed-at: 2020-09-12 07:17:59 +0000 UTC
+    openshift.io/deployer-pod.created-at: 2020-09-12 07:14:24 +0000 UTC
+    openshift.io/deployer-pod.name: router-1-deploy
+    openshift.io/deployment-config.latest-version: "1"
+    openshift.io/deployment-config.name: router
+    openshift.io/deployment.phase: Complete
+    openshift.io/deployment.replicas: "1"
+    openshift.io/deployment.status-reason: config change
+    openshift.io/encoded-deployment-config: |
+      {"kind":"DeploymentConfig","apiVersion":"apps.openshift.io/v1","metadata":{"name":"router","namespace":"default","selfLink":"/apis/apps.openshift.io/v1/namespaces/default/deploymentconfigs/router","uid":"95b935a1-f4c7-11ea-b30d-000c297c3a2d","resourceVersion":"1373","generation":1,"creationTimestamp":"2020-09-12T07:14:23Z","labels":{"router":"router"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":0},"resources":{},"activeDeadlineSeconds":21600},"triggers":[{"type":"ConfigChange"}],"replicas":1,"revisionHistoryLimit":10,"test":false,"selector":{"router":"router"},"template":{"metadata":{"creationTimestamp":null,"labels":{"router":"router"}},"spec":{"volumes":[{"name":"metrics-server-certificate","secret":{"secretName":"router-metrics-tls","defaultMode":420}},{"name":"server-certificate","secret":{"secretName":"router-certs","defaultMode":420}}],"containers":[{"name":"router","image":"openshift/origin-haproxy-router:v3.11.0","ports":[{"hostPort":80,"containerPort":80,"protocol":"TCP"},{"hostPort":443,"containerPort":443,"protocol":"TCP"},{"name":"stats","hostPort":1936,"containerPort":1936,"protocol":"TCP"}],"env":[{"name":"DEFAULT_CERTIFICATE_DIR","value":"/etc/pki/tls/private"},{"name":"DEFAULT_CERTIFICATE_PATH","value":"/etc/pki/tls/private/tls.crt"},{"name":"ROUTER_CIPHERS"},{"name":"ROUTER_EXTERNAL_HOST_HOSTNAME"},{"name":"ROUTER_EXTERNAL_HOST_HTTPS_VSERVER"},{"name":"ROUTER_EXTERNAL_HOST_HTTP_VSERVER"},{"name":"ROUTER_EXTERNAL_HOST_INSECURE","value":"false"},{"name":"ROUTER_EXTERNAL_HOST_INTERNAL_ADDRESS"},{"name":"ROUTER_EXTERNAL_HOST_PARTITION_PATH"},{"name":"ROUTER_EXTERNAL_HOST_PASSWORD"},{"name":"ROUTER_EXTERNAL_HOST_PRIVKEY","value":"/etc/secret-volume/router.pem"},{"name":"ROUTER_EXTERNAL_HOST_USERNAME"},{"name":"ROUTER_EXTERNAL_HOST_VXLAN_GW_CIDR"},{"name":"ROUTER_LISTEN_ADDR","value":"0.0.0.0:1936"},{"name":"ROUTER_METRICS_TLS_CERT_FILE","value":"/etc/pki/tls/metrics/tls.crt"},{"name":"ROUTER_METRICS_TLS_KEY_FILE","value":"/etc/pki/tls/metrics/tls.key"},{"name":"ROUTER_METRICS_TYPE","value":"haproxy"},{"name":"ROUTER_SERVICE_HTTPS_PORT","value":"443"},{"name":"ROUTER_SERVICE_HTTP_PORT","value":"80"},{"name":"ROUTER_SERVICE_NAME","value":"router"},{"name":"ROUTER_SERVICE_NAMESPACE","value":"default"},{"name":"ROUTER_SUBDOMAIN"},{"name":"ROUTER_THREADS","value":"0"},{"name":"STATS_PASSWORD","value":"XIr1JXqbKu"},{"name":"STATS_PORT","value":"1936"},{"name":"STATS_USERNAME","value":"admin"}],"resources":{"requests":{"cpu":"100m","memory":"256Mi"}},"volumeMounts":[{"name":"metrics-server-certificate","readOnly":true,"mountPath":"/etc/pki/tls/metrics/"},{"name":"server-certificate","readOnly":true,"mountPath":"/etc/pki/tls/private"}],"livenessProbe":{"httpGet":{"path":"/healthz","port":1936,"host":"localhost","scheme":"HTTP"},"initialDelaySeconds":10,"timeoutSeconds":1,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"readinessProbe":{"httpGet":{"path":"healthz/ready","port":1936,"host":"localhost","scheme":"HTTP"},"initialDelaySeconds":10,"timeoutSeconds":1,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"IfNotPresent"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","serviceAccountName":"router","serviceAccount":"router","hostNetwork":true,"securityContext":{},"schedulerName":"default-scheduler"}}},"status":{"latestVersion":1,"observedGeneration":0,"replicas":0,"updatedReplicas":0,"availableReplicas":0,"unavailableReplicas":0,"details":{"message":"config change","causes":[{"type":"ConfigChange"}]}}}
+  creationTimestamp: 2020-09-12T07:14:24Z
+  generation: 2
+  labels:
+    openshift.io/deployment-config.name: router
+    router: router
+  name: router-1
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps.openshift.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: DeploymentConfig
+    name: router
+    uid: 95b935a1-f4c7-11ea-b30d-000c297c3a2d
+  resourceVersion: "2470161"
+  selfLink: /api/v1/namespaces/default/replicationcontrollers/router-1
+  uid: 96278209-f4c7-11ea-97ad-000c297c3a2d
+spec:
+  replicas: 1
+  selector:
+    deployment: router-1
+    deploymentconfig: router
+    router: router
+  template:
+    metadata:
+      annotations:
+        openshift.io/deployment-config.latest-version: "1"
+        openshift.io/deployment-config.name: router
+        openshift.io/deployment.name: router-1
+      creationTimestamp: null
+      labels:
+        deployment: router-1
+        deploymentconfig: router
+        router: router
+    spec:
+      containers:
+      - env:
+        - name: DEFAULT_CERTIFICATE_DIR
+          value: /etc/pki/tls/private
+        - name: DEFAULT_CERTIFICATE_PATH
+          value: /etc/pki/tls/private/tls.crt
+        - name: ROUTER_CIPHERS
+        - name: ROUTER_EXTERNAL_HOST_HOSTNAME
+        - name: ROUTER_EXTERNAL_HOST_HTTPS_VSERVER
+        - name: ROUTER_EXTERNAL_HOST_HTTP_VSERVER
+        - name: ROUTER_EXTERNAL_HOST_INSECURE
+          value: "false"
+        - name: ROUTER_EXTERNAL_HOST_INTERNAL_ADDRESS
+        - name: ROUTER_EXTERNAL_HOST_PARTITION_PATH
+        - name: ROUTER_EXTERNAL_HOST_PASSWORD
+        - name: ROUTER_EXTERNAL_HOST_PRIVKEY
+          value: /etc/secret-volume/router.pem
+        - name: ROUTER_EXTERNAL_HOST_USERNAME
+        - name: ROUTER_EXTERNAL_HOST_VXLAN_GW_CIDR
+        - name: ROUTER_LISTEN_ADDR
+          value: 0.0.0.0:1936
+        - name: ROUTER_METRICS_TLS_CERT_FILE
+          value: /etc/pki/tls/metrics/tls.crt
+        - name: ROUTER_METRICS_TLS_KEY_FILE
+          value: /etc/pki/tls/metrics/tls.key
+        - name: ROUTER_METRICS_TYPE
+          value: haproxy
+        - name: ROUTER_SERVICE_HTTPS_PORT
+          value: "443"
+        - name: ROUTER_SERVICE_HTTP_PORT
+          value: "80"
+        - name: ROUTER_SERVICE_NAME
+          value: router
+        - name: ROUTER_SERVICE_NAMESPACE
+          value: default
+        - name: ROUTER_SUBDOMAIN
+        - name: ROUTER_THREADS
+          value: "0"
+        - name: STATS_PASSWORD
+          value: XIr1JXqbKu
+        - name: STATS_PORT
+          value: "1936"
+        - name: STATS_USERNAME
+          value: admin
+        image: openshift/origin-haproxy-router:v3.11.0
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            host: localhost
+            path: /healthz
+            port: 1936
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: router
+        ports:
+        - containerPort: 80
+          hostPort: 80
+          protocol: TCP
+        - containerPort: 443
+          hostPort: 443
+          protocol: TCP
+        - containerPort: 1936
+          hostPort: 1936
+          name: stats
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            host: localhost
+            path: healthz/ready
+            port: 1936
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/pki/tls/metrics/
+          name: metrics-server-certificate
+          readOnly: true
+        - mountPath: /etc/pki/tls/private
+          name: server-certificate
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      hostNetwork: true
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: router
+      serviceAccountName: router
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: metrics-server-certificate
+        secret:
+          defaultMode: 420
+          secretName: router-metrics-tls
+      - name: server-certificate
+        secret:
+          defaultMode: 420
+          secretName: router-certs
+status:
+  availableReplicas: 1
+  fullyLabeledReplicas: 1
+  observedGeneration: 2
+  readyReplicas: 1
+  replicas: 1

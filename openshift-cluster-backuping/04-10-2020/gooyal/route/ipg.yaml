@@ -1,0 +1,27 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: 2020-09-27T00:22:13Z
+  name: ipg
+  namespace: gooyal
+  resourceVersion: "3283198"
+  selfLink: /apis/route.openshift.io/v1/namespaces/gooyal/routes/ipg
+  uid: 7d8c83e1-0057-11eb-8755-000c297c3a2d
+spec:
+  host: ipg.gooyal.com
+  port:
+    targetPort: 80-tcp
+  to:
+    kind: Service
+    name: ipg
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: 2020-09-27T00:22:13Z
+      status: "True"
+      type: Admitted
+    host: ipg.gooyal.com
+    routerName: router
+    wildcardPolicy: None

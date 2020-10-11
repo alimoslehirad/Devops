@@ -1,0 +1,91 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: 2020-09-13T07:11:16Z
+  generation: 13
+  labels:
+    app: karafarin-nodejs
+  name: karafarin-nodejs
+  namespace: karafarin-frontend
+  resourceVersion: "2486665"
+  selfLink: /apis/apps.openshift.io/v1/namespaces/karafarin-frontend/deploymentconfigs/karafarin-nodejs
+  uid: 50922087-f590-11ea-b30d-000c297c3a2d
+spec:
+  replicas: 1
+  selector:
+    deploymentconfig: karafarin-nodejs
+  strategy:
+    activeDeadlineSeconds: 21600
+    resources: {}
+    rollingParams:
+      intervalSeconds: 1
+      maxSurge: 25%
+      maxUnavailable: 25%
+      timeoutSeconds: 600
+      updatePeriodSeconds: 1
+    type: Rolling
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: karafarin-nodejs
+        deploymentconfig: karafarin-nodejs
+    spec:
+      containers:
+      - image: 172.30.1.1:5000/karafarin-frontend/karafarin-nodejs@sha256:afe0db1025cb8b009a55e72e1d055b06fa149629d14a3239de828dce4e2e2764
+        imagePullPolicy: Always
+        name: karafarin-nodejs
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  test: false
+  triggers:
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - karafarin-nodejs
+      from:
+        kind: ImageStreamTag
+        name: karafarin-nodejs:latest
+        namespace: karafarin-frontend
+      lastTriggeredImage: 172.30.1.1:5000/karafarin-frontend/karafarin-nodejs@sha256:afe0db1025cb8b009a55e72e1d055b06fa149629d14a3239de828dce4e2e2764
+    type: ImageChange
+  - type: ConfigChange
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: 2020-09-20T04:26:53Z
+    lastUpdateTime: 2020-09-20T04:26:53Z
+    message: Deployment config has minimum availability.
+    status: "True"
+    type: Available
+  - lastTransitionTime: 2020-09-20T08:07:21Z
+    lastUpdateTime: 2020-09-20T08:07:24Z
+    message: replication controller "karafarin-nodejs-5" successfully rolled out
+    reason: NewReplicationControllerAvailable
+    status: "True"
+    type: Progressing
+  details:
+    causes:
+    - imageTrigger:
+        from:
+          kind: DockerImage
+          name: 172.30.1.1:5000/karafarin-frontend/karafarin-nodejs@sha256:afe0db1025cb8b009a55e72e1d055b06fa149629d14a3239de828dce4e2e2764
+      type: ImageChange
+    message: image change
+  latestVersion: 5
+  observedGeneration: 13
+  readyReplicas: 1
+  replicas: 1
+  unavailableReplicas: 0
+  updatedReplicas: 1

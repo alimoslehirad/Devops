@@ -1,0 +1,107 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  creationTimestamp: 2020-09-26T23:35:29Z
+  generation: 5
+  name: accounts
+  namespace: karafarin-backend
+  resourceVersion: "3346609"
+  selfLink: /apis/apps.openshift.io/v1/namespaces/karafarin-backend/deploymentconfigs/accounts
+  uid: f6572209-0050-11eb-8755-000c297c3a2d
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    app: accounts
+    deploymentconfig: accounts
+  strategy:
+    activeDeadlineSeconds: 21600
+    resources: {}
+    rollingParams:
+      intervalSeconds: 1
+      maxSurge: 25%
+      maxUnavailable: 25%
+      timeoutSeconds: 600
+      updatePeriodSeconds: 1
+    type: Rolling
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: null
+      labels:
+        app: accounts
+        deploymentconfig: accounts
+    spec:
+      containers:
+      - env:
+        - name: DEBUG
+          value: "True"
+        - name: DB_HOST
+          value: accounts-mysql
+        - name: DB_NAME
+          value: accounts
+        - name: DB_USER
+          value: userWKY
+        - name: DB_PASSWORD
+          value: wApWW2rBPFQYI1K5
+        - name: CLIENT_ID
+        - name: CLIENT_SECRET
+        - name: BASE_ACCOUNTS_URL
+        - name: BASE_NOTIFICATION_URL
+        - name: CELERY_BROKER_URL
+        image: 172.30.1.1:5000/karafarin-backend/karafarin-accounts@sha256:a2ebeb714d57cf5aa60b96c7b15b8a35590e17088f43ce5ed21b3c0b2cdcb722
+        imagePullPolicy: Always
+        name: gooyal
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  test: false
+  triggers:
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - gooyal
+      from:
+        kind: ImageStreamTag
+        name: karafarin-accounts:latest
+        namespace: karafarin-backend
+      lastTriggeredImage: 172.30.1.1:5000/karafarin-backend/karafarin-accounts@sha256:a2ebeb714d57cf5aa60b96c7b15b8a35590e17088f43ce5ed21b3c0b2cdcb722
+    type: ImageChange
+  - type: ConfigChange
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: 2020-09-26T23:41:18Z
+    lastUpdateTime: 2020-09-26T23:41:18Z
+    message: Deployment config has minimum availability.
+    status: "True"
+    type: Available
+  - lastTransitionTime: 2020-09-27T13:30:05Z
+    lastUpdateTime: 2020-09-27T13:30:07Z
+    message: replication controller "accounts-3" successfully rolled out
+    reason: NewReplicationControllerAvailable
+    status: "True"
+    type: Progressing
+  details:
+    causes:
+    - imageTrigger:
+        from:
+          kind: DockerImage
+          name: 172.30.1.1:5000/karafarin-backend/karafarin-accounts@sha256:a2ebeb714d57cf5aa60b96c7b15b8a35590e17088f43ce5ed21b3c0b2cdcb722
+      type: ImageChange
+    message: image change
+  latestVersion: 3
+  observedGeneration: 5
+  readyReplicas: 1
+  replicas: 1
+  unavailableReplicas: 0
+  updatedReplicas: 1

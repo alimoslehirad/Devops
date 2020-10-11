@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  annotations:
+    kubectl.kubernetes.io/original-replicas: "1"
+    openshift.io/deployer-pod.completed-at: 2020-09-19 09:36:11 +0000 UTC
+    openshift.io/deployer-pod.created-at: 2020-09-19 09:36:01 +0000 UTC
+    openshift.io/deployer-pod.name: karafarin-backend-41-deploy
+    openshift.io/deployment-config.latest-version: "41"
+    openshift.io/deployment-config.name: karafarin-backend
+    openshift.io/deployment.phase: Complete
+    openshift.io/deployment.replicas: ""
+    openshift.io/deployment.status-reason: image change
+    openshift.io/encoded-deployment-config: |
+      {"kind":"DeploymentConfig","apiVersion":"apps.openshift.io/v1","metadata":{"name":"karafarin-backend","namespace":"karafarin-backend","selfLink":"/apis/apps.openshift.io/v1/namespaces/karafarin-backend/deploymentconfigs/karafarin-backend","uid":"ede3f17e-f7ec-11ea-b30d-000c297c3a2d","resourceVersion":"2459274","generation":42,"creationTimestamp":"2020-09-16T07:19:16Z","labels":{"app":"karafarin-backend"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"strategy":{"type":"Rolling","rollingParams":{"updatePeriodSeconds":1,"intervalSeconds":1,"timeoutSeconds":600,"maxUnavailable":"25%","maxSurge":"25%"},"resources":{},"activeDeadlineSeconds":21600},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["karafarin-backend"],"from":{"kind":"ImageStreamTag","namespace":"karafarin-backend","name":"karafarin-backend:latest"},"lastTriggeredImage":"172.30.1.1:5000/karafarin-backend/karafarin-backend@sha256:9ce88c2f199d42bed885d3a68477777580b2f785b99ec01b4e824bbe0950e77c"}},{"type":"ConfigChange"}],"replicas":1,"test":false,"selector":{"app":"karafarin-backend","deploymentconfig":"karafarin-backend"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"karafarin-backend","deploymentconfig":"karafarin-backend"},"annotations":{"openshift.io/generated-by":"OpenShiftWebConsole"}},"spec":{"containers":[{"name":"karafarin-backend","image":"172.30.1.1:5000/karafarin-backend/karafarin-backend@sha256:9ce88c2f199d42bed885d3a68477777580b2f785b99ec01b4e824bbe0950e77c","ports":[{"containerPort":8080,"protocol":"TCP"}],"env":[{"name":"DATABASE_URL","value":"postgresql.karafarin-backend.svc"},{"name":"DB_NAME","value":"karafarini-backend"},{"name":"DB_USER","value":"back_user"},{"name":"DB_USER_PASS","value":"cfDxk66vLSyxFnQ"},{"name":"DATABASE_URL","value":"psql://back_user:cfDxk66vLSyxFnQ@postgresql.karafarin-backend.svc:5432/karafarini-backend"},{"name":"CLIENT_ID","value":"eI9NPrzpObBLuWzGFgNpE50FWl7PstFhxw2BgfTr"},{"name":"CLIENT_SECRET","value":"0r9dF8HUQvKmhqm2BehTstZC0JyRiKnGBOJJmdI7MPqr9qHsFYijUxELWyOJ2QPn5IGtOmNzPwfXr5AYNogl6fRqdU5QPGPjgi2AGZce4L29M9ONFMzmTxef7qL0fLs1"},{"name":"BASE_NOTIFICATION_URL"}],"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{},"schedulerName":"default-scheduler"}}},"status":{"latestVersion":41,"observedGeneration":41,"replicas":1,"updatedReplicas":1,"availableReplicas":1,"unavailableReplicas":0,"details":{"message":"image change","causes":[{"type":"ImageChange","imageTrigger":{"from":{"kind":"DockerImage","name":"172.30.1.1:5000/karafarin-backend/karafarin-backend@sha256:9ce88c2f199d42bed885d3a68477777580b2f785b99ec01b4e824bbe0950e77c"}}}]},"conditions":[{"type":"Available","status":"True","lastUpdateTime":"2020-09-19T07:16:03Z","lastTransitionTime":"2020-09-19T07:16:03Z","message":"Deployment config has minimum availability."},{"type":"Progressing","status":"True","lastUpdateTime":"2020-09-19T07:16:06Z","lastTransitionTime":"2020-09-19T07:16:04Z","reason":"NewReplicationControllerAvailable","message":"replication controller \"karafarin-backend-40\" successfully rolled out"}],"readyReplicas":1}}
+  creationTimestamp: 2020-09-19T09:36:01Z
+  generation: 3
+  labels:
+    app: karafarin-backend
+    openshift.io/deployment-config.name: karafarin-backend
+  name: karafarin-backend-41
+  namespace: karafarin-backend
+  ownerReferences:
+  - apiVersion: apps.openshift.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: DeploymentConfig
+    name: karafarin-backend
+    uid: ede3f17e-f7ec-11ea-b30d-000c297c3a2d
+  resourceVersion: "2485014"
+  selfLink: /api/v1/namespaces/karafarin-backend/replicationcontrollers/karafarin-backend-41
+  uid: 87e38e4b-fa5b-11ea-97ad-000c297c3a2d
+spec:
+  replicas: 0
+  selector:
+    app: karafarin-backend
+    deployment: karafarin-backend-41
+    deploymentconfig: karafarin-backend
+  template:
+    metadata:
+      annotations:
+        openshift.io/deployment-config.latest-version: "41"
+        openshift.io/deployment-config.name: karafarin-backend
+        openshift.io/deployment.name: karafarin-backend-41
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: null
+      labels:
+        app: karafarin-backend
+        deployment: karafarin-backend-41
+        deploymentconfig: karafarin-backend
+    spec:
+      containers:
+      - env:
+        - name: DATABASE_URL
+          value: postgresql.karafarin-backend.svc
+        - name: DB_NAME
+          value: karafarini-backend
+        - name: DB_USER
+          value: back_user
+        - name: DB_USER_PASS
+          value: cfDxk66vLSyxFnQ
+        - name: DATABASE_URL
+          value: psql://back_user:cfDxk66vLSyxFnQ@postgresql.karafarin-backend.svc:5432/karafarini-backend
+        - name: CLIENT_ID
+          value: eI9NPrzpObBLuWzGFgNpE50FWl7PstFhxw2BgfTr
+        - name: CLIENT_SECRET
+          value: 0r9dF8HUQvKmhqm2BehTstZC0JyRiKnGBOJJmdI7MPqr9qHsFYijUxELWyOJ2QPn5IGtOmNzPwfXr5AYNogl6fRqdU5QPGPjgi2AGZce4L29M9ONFMzmTxef7qL0fLs1
+        - name: BASE_NOTIFICATION_URL
+        image: 172.30.1.1:5000/karafarin-backend/karafarin-backend@sha256:9ce88c2f199d42bed885d3a68477777580b2f785b99ec01b4e824bbe0950e77c
+        imagePullPolicy: Always
+        name: karafarin-backend
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  observedGeneration: 3
+  replicas: 0

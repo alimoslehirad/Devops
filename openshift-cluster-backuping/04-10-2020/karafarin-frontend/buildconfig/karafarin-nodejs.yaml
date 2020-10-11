@@ -1,0 +1,49 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: 2020-09-13T07:11:16Z
+  labels:
+    app: karafarin-nodejs
+  name: karafarin-nodejs
+  namespace: karafarin-frontend
+  resourceVersion: "2482207"
+  selfLink: /apis/build.openshift.io/v1/namespaces/karafarin-frontend/buildconfigs/karafarin-nodejs
+  uid: 507c0c1d-f590-11ea-b30d-000c297c3a2d
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: karafarin-nodejs:latest
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: https://mgit.mparsict.com/karafarinan/client.git
+    sourceSecret:
+      name: git-basicauth-momeni
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: nodejs:10
+        namespace: openshift
+    type: Source
+  triggers:
+  - imageChange:
+      lastTriggeredImageID: 172.30.1.1:5000/openshift/nodejs@sha256:3cc041334eef8d5853078a0190e46a2998a70ad98320db512968f1de0561705e
+    type: ImageChange
+  - type: ConfigChange
+  - generic:
+      secret: 156286808b27dc87
+    type: Generic
+  - github:
+      secret: f1846c0bfae7ddb3
+    type: GitHub
+status:
+  lastVersion: 9

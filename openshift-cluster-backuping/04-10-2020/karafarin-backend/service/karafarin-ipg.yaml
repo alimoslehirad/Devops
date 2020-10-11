@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: 2020-09-23T07:38:35Z
+  labels:
+    app: karafarin-ipg
+  name: karafarin-ipg
+  namespace: karafarin-backend
+  resourceVersion: "3191147"
+  selfLink: /api/v1/namespaces/karafarin-backend/services/karafarin-ipg
+  uid: c9d3c6cf-fd6f-11ea-a47b-000c297c3a2d
+spec:
+  clusterIP: 172.30.94.47
+  ports:
+  - name: 80-tcp
+    port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    deploymentconfig: karafarin-ipg
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

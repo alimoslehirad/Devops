@@ -1,0 +1,94 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewBuild
+  creationTimestamp: 2020-09-13T11:27:07Z
+  labels:
+    build: karafarin-backend
+  name: karafarin-backend
+  namespace: karafarin-backend
+  resourceVersion: "3219055"
+  selfLink: /apis/build.openshift.io/v1/namespaces/karafarin-backend/buildconfigs/karafarin-backend
+  uid: 0e46b24b-f5b4-11ea-b30d-000c297c3a2d
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: karafarin-backend:latest
+  postCommit: {}
+  resources:
+    limits:
+      cpu: "1"
+      memory: 1000Mi
+  runPolicy: Serial
+  source:
+    dockerfile: |-
+      ###########
+      # BUILDER #
+      ###########
+
+      # pull official base image
+
+      FROM debian:buster
+      USER root
+      ENV BRANCH=develop
+      ENV BASE_DIR=/opt
+      ENV APP_DIR=/opt/app
+      ENV APP_USER=app_user
+      ENV PROJECT_NAME=app
+
+      #RUN echo "deb http://deb.debian.org/debian buster main contrib non-free" >> /etc/apt/sources.list
+      #RUN echo "deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free" >> /etc/apt/sources.list
+      #RUN echo "deb http://deb.debian.org/debian buster-updates main contrib non-free" >> /etc/apt/sources.list
+      #RUN apt update && apt install git build-essential libssl-dev libffi-dev python3-dev python3-pip -y
+
+      WORKDIR $BASE_DIR
+      RUN git clone https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/karafarinan/backend.git $APP_DIR
+      WORKDIR $APP_DIR
+      RUN git checkout $BRANCH && git pull
+
+      RUN pip3 install --upgrade pip
+      RUN pip install git+https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/utils/mp-logging-helper.git
+      RUN pip install git+https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/utils/mp-model-helper.git
+      RUN pip install git+https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/utils/mp-swagger-helper.git
+      RUN pip install git+https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/utils/mp-test-helper.git
+      RUN pip install git+https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/utils/mp-api-helper.git
+      RUN pip install git+https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/utils/mp-document-helper.git
+      RUN pip install git+https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/utils/mp-mobile-helper.git
+      RUN pip install git+https://pullerutil:jjishu337aanoAAdd@mgit.mparsict.com/utils/service_clients.git
+      RUN pip install -r requirements.txt
+
+      RUN adduser $APP_USER && usermod -aG $APP_USER $APP_USER
+      RUN mkdir $APP_DIR/static
+      RUN mkdir $APP_DIR/media
+      # RUN python manage.py collectstatic
+      # RUN python manage.py migrate
+
+      RUN mkdir $APP_DIR/logs
+      RUN chmod -R 777 /opt/app  && \
+          chown $APP_USER:0 /opt/app -R && \
+          chmod +x /opt/app -R
+      EXPOSE 8000
+      USER $APP_USER
+
+      CMD ["bash", "run.sh"]
+    type: Dockerfile
+  strategy:
+    dockerStrategy:
+      env:
+      - name: PROJECT_NAME
+        value: app
+      - name: SECRET_KEY
+        value: w%97bq=zho5c=n0%lpz2il+^bznp6b+za+$04^g675me5u0%e5
+      from:
+        kind: ImageStreamTag
+        name: karafarin-ipg:pre-1
+    type: Docker
+  successfulBuildsHistoryLimit: 20
+  triggers:
+  - type: ConfigChange
+status:
+  lastVersion: 125

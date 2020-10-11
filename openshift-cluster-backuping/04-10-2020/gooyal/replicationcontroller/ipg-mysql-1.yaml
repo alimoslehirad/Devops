@@ -1,0 +1,122 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  annotations:
+    openshift.io/deployer-pod.completed-at: 2020-09-27 00:06:50 +0000 UTC
+    openshift.io/deployer-pod.created-at: 2020-09-27 00:06:00 +0000 UTC
+    openshift.io/deployer-pod.name: ipg-mysql-1-deploy
+    openshift.io/deployment-config.latest-version: "1"
+    openshift.io/deployment-config.name: ipg-mysql
+    openshift.io/deployment.phase: Complete
+    openshift.io/deployment.replicas: "1"
+    openshift.io/deployment.status-reason: config change
+    openshift.io/encoded-deployment-config: |
+      {"kind":"DeploymentConfig","apiVersion":"apps.openshift.io/v1","metadata":{"name":"ipg-mysql","namespace":"gooyal","selfLink":"/apis/apps.openshift.io/v1/namespaces/gooyal/deploymentconfigs/ipg-mysql","uid":"385bb783-0055-11eb-8755-000c297c3a2d","resourceVersion":"3281504","generation":2,"creationTimestamp":"2020-09-27T00:05:58Z","labels":{"app":"mysql-persistent","template":"mysql-persistent-template"},"annotations":{"template.alpha.openshift.io/wait-for-ready":"true"}},"spec":{"strategy":{"type":"Recreate","recreateParams":{"timeoutSeconds":600},"resources":{},"activeDeadlineSeconds":21600},"triggers":[{"type":"ImageChange","imageChangeParams":{"automatic":true,"containerNames":["mysql"],"from":{"kind":"ImageStreamTag","namespace":"openshift","name":"mysql:5.7"},"lastTriggeredImage":"172.30.1.1:5000/openshift/mysql@sha256:e08ee4d43b7356607685b69bde6335e27cf20c020f345b6c6c59400183882764"}},{"type":"ConfigChange"}],"replicas":1,"revisionHistoryLimit":10,"test":false,"selector":{"name":"ipg-mysql"},"template":{"metadata":{"creationTimestamp":null,"labels":{"name":"ipg-mysql"}},"spec":{"volumes":[{"name":"ipg-mysql-data","persistentVolumeClaim":{"claimName":"ipg-mysql"}}],"containers":[{"name":"mysql","image":"172.30.1.1:5000/openshift/mysql@sha256:e08ee4d43b7356607685b69bde6335e27cf20c020f345b6c6c59400183882764","ports":[{"containerPort":3306,"protocol":"TCP"}],"env":[{"name":"MYSQL_USER","valueFrom":{"secretKeyRef":{"name":"ipg-mysql","key":"database-user"}}},{"name":"MYSQL_PASSWORD","valueFrom":{"secretKeyRef":{"name":"ipg-mysql","key":"database-password"}}},{"name":"MYSQL_ROOT_PASSWORD","valueFrom":{"secretKeyRef":{"name":"ipg-mysql","key":"database-root-password"}}},{"name":"MYSQL_DATABASE","valueFrom":{"secretKeyRef":{"name":"ipg-mysql","key":"database-name"}}}],"resources":{"limits":{"memory":"512Mi"}},"volumeMounts":[{"name":"ipg-mysql-data","mountPath":"/var/lib/mysql/data"}],"livenessProbe":{"tcpSocket":{"port":3306},"initialDelaySeconds":30,"timeoutSeconds":1,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"readinessProbe":{"exec":{"command":["/bin/sh","-i","-c","MYSQL_PWD=\"$MYSQL_PASSWORD\" mysql -h 127.0.0.1 -u $MYSQL_USER -D $MYSQL_DATABASE -e 'SELECT 1'"]},"initialDelaySeconds":5,"timeoutSeconds":1,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"IfNotPresent"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"ClusterFirst","securityContext":{},"schedulerName":"default-scheduler"}}},"status":{"latestVersion":1,"observedGeneration":1,"replicas":0,"updatedReplicas":0,"availableReplicas":0,"unavailableReplicas":0,"details":{"message":"config change","causes":[{"type":"ConfigChange"}]},"conditions":[{"type":"Available","status":"False","lastUpdateTime":"2020-09-27T00:05:58Z","lastTransitionTime":"2020-09-27T00:05:58Z","message":"Deployment config does not have minimum availability."}]}}
+  creationTimestamp: 2020-09-27T00:05:59Z
+  generation: 2
+  labels:
+    app: mysql-persistent
+    openshift.io/deployment-config.name: ipg-mysql
+    template: mysql-persistent-template
+  name: ipg-mysql-1
+  namespace: gooyal
+  ownerReferences:
+  - apiVersion: apps.openshift.io/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: DeploymentConfig
+    name: ipg-mysql
+    uid: 385bb783-0055-11eb-8755-000c297c3a2d
+  resourceVersion: "3281617"
+  selfLink: /api/v1/namespaces/gooyal/replicationcontrollers/ipg-mysql-1
+  uid: 3952bc40-0055-11eb-a47b-000c297c3a2d
+spec:
+  replicas: 1
+  selector:
+    deployment: ipg-mysql-1
+    deploymentconfig: ipg-mysql
+    name: ipg-mysql
+  template:
+    metadata:
+      annotations:
+        openshift.io/deployment-config.latest-version: "1"
+        openshift.io/deployment-config.name: ipg-mysql
+        openshift.io/deployment.name: ipg-mysql-1
+      creationTimestamp: null
+      labels:
+        deployment: ipg-mysql-1
+        deploymentconfig: ipg-mysql
+        name: ipg-mysql
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              key: database-user
+              name: ipg-mysql
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: database-password
+              name: ipg-mysql
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: database-root-password
+              name: ipg-mysql
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              key: database-name
+              name: ipg-mysql
+        image: 172.30.1.1:5000/openshift/mysql@sha256:e08ee4d43b7356607685b69bde6335e27cf20c020f345b6c6c59400183882764
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 3306
+          timeoutSeconds: 1
+        name: mysql
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -i
+            - -c
+            - MYSQL_PWD="$MYSQL_PASSWORD" mysql -h 127.0.0.1 -u $MYSQL_USER -D $MYSQL_DATABASE
+              -e 'SELECT 1'
+          failureThreshold: 3
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/mysql/data
+          name: ipg-mysql-data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: ipg-mysql-data
+        persistentVolumeClaim:
+          claimName: ipg-mysql
+status:
+  availableReplicas: 1
+  fullyLabeledReplicas: 1
+  observedGeneration: 2
+  readyReplicas: 1
+  replicas: 1

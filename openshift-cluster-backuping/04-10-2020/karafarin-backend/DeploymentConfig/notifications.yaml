@@ -1,0 +1,93 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  creationTimestamp: 2020-09-27T05:59:01Z
+  generation: 6
+  name: notifications
+  namespace: karafarin-backend
+  resourceVersion: "3317444"
+  selfLink: /apis/apps.openshift.io/v1/namespaces/karafarin-backend/deploymentconfigs/notifications
+  uid: 8a9e44b6-0086-11eb-8755-000c297c3a2d
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    app: notifications
+    deploymentconfig: notifications
+  strategy:
+    activeDeadlineSeconds: 21600
+    resources: {}
+    rollingParams:
+      intervalSeconds: 1
+      maxSurge: 25%
+      maxUnavailable: 25%
+      timeoutSeconds: 600
+      updatePeriodSeconds: 1
+    type: Rolling
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+      creationTimestamp: null
+      labels:
+        app: notifications
+        deploymentconfig: notifications
+    spec:
+      containers:
+      - env:
+        - name: DEBUG
+          value: "True"
+        image: 172.30.1.1:5000/karafarin-backend/karafarin-notifications@sha256:24f61beb2ec8af5876e408f1052b4777dd09945c34218671f646b5a60674bff6
+        imagePullPolicy: Always
+        name: karafarin-backend
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  test: false
+  triggers:
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - karafarin-backend
+      from:
+        kind: ImageStreamTag
+        name: karafarin-notifications:latest
+        namespace: karafarin-backend
+      lastTriggeredImage: 172.30.1.1:5000/karafarin-backend/karafarin-notifications@sha256:24f61beb2ec8af5876e408f1052b4777dd09945c34218671f646b5a60674bff6
+    type: ImageChange
+  - type: ConfigChange
+status:
+  availableReplicas: 0
+  conditions:
+  - lastTransitionTime: 2020-09-27T05:59:02Z
+    lastUpdateTime: 2020-09-27T05:59:02Z
+    message: Deployment config does not have minimum availability.
+    status: "False"
+    type: Available
+  - lastTransitionTime: 2020-09-27T07:25:30Z
+    lastUpdateTime: 2020-09-27T07:25:30Z
+    message: replication controller "notifications-4" has failed progressing
+    reason: ProgressDeadlineExceeded
+    status: "False"
+    type: Progressing
+  details:
+    causes:
+    - imageTrigger:
+        from:
+          kind: DockerImage
+          name: 172.30.1.1:5000/karafarin-backend/karafarin-notifications@sha256:24f61beb2ec8af5876e408f1052b4777dd09945c34218671f646b5a60674bff6
+      type: ImageChange
+    message: image change
+  latestVersion: 4
+  observedGeneration: 6
+  replicas: 0
+  unavailableReplicas: 0
+  updatedReplicas: 0

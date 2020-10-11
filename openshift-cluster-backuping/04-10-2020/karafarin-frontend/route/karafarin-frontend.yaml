@@ -1,0 +1,29 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: 2020-09-13T08:04:10Z
+  labels:
+    app: karafarin-nodejs
+  name: karafarin-frontend
+  namespace: karafarin-frontend
+  resourceVersion: "357942"
+  selfLink: /apis/route.openshift.io/v1/namespaces/karafarin-frontend/routes/karafarin-frontend
+  uid: b437581a-f597-11ea-b30d-000c297c3a2d
+spec:
+  host: karafarin.mparsict.com
+  port:
+    targetPort: 3000-tcp
+  to:
+    kind: Service
+    name: karafarin-nodejs
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: 2020-09-13T08:04:10Z
+      status: "True"
+      type: Admitted
+    host: karafarin.mparsict.com
+    routerName: router
+    wildcardPolicy: None
