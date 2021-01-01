@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-01T18:50:26.712Z" agent="5.0 (X11)" etag="QZddUq6M4v95qmXZHjbm" version="14.1.7" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-01-01T18:50:54.957Z" agent="5.0 (X11)" etag="B7csBJPTm_mza4cpaDBU" version="14.1.7" type="github" pages="2">
   <diagram id="9TmfmCz-h732q6O2XP1U" name="Page-1">
     <mxGraphModel dx="1258" dy="733" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#CCFFE6" math="0" shadow="0">
       <root>
@@ -192,7 +192,7 @@
           <mxGeometry x="830" y="310" width="140" height="100" as="geometry" />
         </mxCell>
         <mxCell id="MW5D7cG7npsvMn2pO1Nx-8" value="bank login/token" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="MW5D7cG7npsvMn2pO1Nx-1">
-          <mxGeometry x="950" y="130" width="120" height="80" as="geometry" />
+          <mxGeometry x="840" y="110" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="MW5D7cG7npsvMn2pO1Nx-9" value="UUID Reserve Service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="MW5D7cG7npsvMn2pO1Nx-1">
           <mxGeometry x="300" y="30" width="120" height="60" as="geometry" />
