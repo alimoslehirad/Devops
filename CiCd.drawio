@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2021-01-04T18:58:42.691Z" agent="5.0 (X11)" etag="emqu4_AG27G8dr4W87wa" version="14.1.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-04T19:03:57.144Z" agent="5.0 (X11)" etag="jmAft9wCrb9ldBKbNZAH" version="14.1.7" type="github">
   <diagram id="aPqZ-307RKCsaADKRxwD" name="Page-1">
     <mxGraphModel dx="1371" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="La8HqPow41N4H4vOimzL-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="480" width="120" height="60" as="geometry" />
+        <mxCell id="La8HqPow41N4H4vOimzL-2" value="create merge request " style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="320" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="La8HqPow41N4H4vOimzL-3" value="" style="endArrow=none;html=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -13,7 +13,7 @@
             <mxPoint x="210" y="280" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="La8HqPow41N4H4vOimzL-4" value="create merge request" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="La8HqPow41N4H4vOimzL-4" value="merge request" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="60" y="250" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="La8HqPow41N4H4vOimzL-5" value="" style="endArrow=none;html=1;" edge="1" parent="1">
@@ -27,27 +27,63 @@
         </mxCell>
         <mxCell id="La8HqPow41N4H4vOimzL-7" value="" style="endArrow=none;html=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="560" y="280" as="sourcePoint" />
-            <mxPoint x="710" y="280" as="targetPoint" />
+            <mxPoint x="680" y="290" as="sourcePoint" />
+            <mxPoint x="830" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="La8HqPow41N4H4vOimzL-8" value="create docker image" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="560" y="250" width="150" height="20" as="geometry" />
+          <mxGeometry x="680" y="260" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="La8HqPow41N4H4vOimzL-9" value="" style="endArrow=none;html=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="840" y="280" as="sourcePoint" />
-            <mxPoint x="990" y="280" as="targetPoint" />
+            <mxPoint x="960" y="290" as="sourcePoint" />
+            <mxPoint x="1110" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="La8HqPow41N4H4vOimzL-10" value="Deploy" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="840" y="250" width="150" height="20" as="geometry" />
+          <mxGeometry x="960" y="260" width="150" height="20" as="geometry" />
         </mxCell>
         <mxCell id="La8HqPow41N4H4vOimzL-11" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="530" y="630" as="sourcePoint" />
-            <mxPoint x="530" y="70" as="targetPoint" />
+            <mxPoint x="530" y="20" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="La8HqPow41N4H4vOimzL-12" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/OpenShift-LogoType.svg/1200px-OpenShift-LogoType.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="800" y="40" width="87" height="92.89" as="geometry" />
+        </mxCell>
+        <mxCell id="La8HqPow41N4H4vOimzL-13" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_15680ee909406e13c21c8f179f83d99e/gitlab.png;" vertex="1" parent="1">
+          <mxGeometry x="140" y="30" width="200" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="La8HqPow41N4H4vOimzL-14" value="gitlab-runner" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="La8HqPow41N4H4vOimzL-15" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="201" y="350" as="sourcePoint" />
+            <mxPoint x="311" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="231" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="La8HqPow41N4H4vOimzL-17" value="" style="shape=flexArrow;endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="350" as="sourcePoint" />
+            <mxPoint x="630" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="349.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="La8HqPow41N4H4vOimzL-18" value="openshift-builder" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="La8HqPow41N4H4vOimzL-19" value="trigger signal" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="320" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="La8HqPow41N4H4vOimzL-20" value="webhook" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="320" width="80" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
