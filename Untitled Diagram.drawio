@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-16T19:16:08.529Z" agent="5.0 (X11)" etag="GkoTuNqnPl_8hhqEWWqm" version="14.1.8" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-01-16T20:06:07.978Z" agent="5.0 (X11)" etag="wgti3bmF8vJRgTl4a9Yo" version="14.1.8" type="github" pages="4">
   <diagram id="9TmfmCz-h732q6O2XP1U" name="Page-1">
     <mxGraphModel dx="1371" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -194,10 +194,10 @@
         <mxCell id="NJvS3RI_Up09lAXH_RUf-26" value="circuit breaker" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="720" y="620" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NJvS3RI_Up09lAXH_RUf-27" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-10;" vertex="1" parent="1">
+        <mxCell id="NJvS3RI_Up09lAXH_RUf-27" value="MB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-10;" vertex="1" parent="1">
           <mxGeometry x="690" y="290" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="NJvS3RI_Up09lAXH_RUf-28" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+        <mxCell id="NJvS3RI_Up09lAXH_RUf-28" value="MB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
           <mxGeometry x="750" y="460" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="NJvS3RI_Up09lAXH_RUf-29" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-45;" vertex="1" parent="1">
@@ -205,6 +205,9 @@
         </mxCell>
         <mxCell id="NJvS3RI_Up09lAXH_RUf-30" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
           <mxGeometry x="290" y="310" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NJvS3RI_Up09lAXH_RUf-33" value="MB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="600" width="40" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
