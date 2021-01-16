@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-16T10:06:07.379Z" agent="5.0 (X11)" etag="NSIp5_DyxHVktOaTKMtd" version="14.1.8" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-01-16T10:16:10.133Z" agent="5.0 (X11)" etag="gyI4Jo4A5uQ6CWawSPqQ" version="14.1.8" type="github" pages="4">
   <diagram id="9TmfmCz-h732q6O2XP1U" name="Page-1">
     <mxGraphModel dx="1371" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -6,6 +6,15 @@
         <mxCell id="1" parent="0" />
         <mxCell id="yx9G2MlZ8vXQoHSZa9hz-1" value="Authorization service(key cloak)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="110" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="NJvS3RI_Up09lAXH_RUf-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="yx9G2MlZ8vXQoHSZa9hz-2" target="NJvS3RI_Up09lAXH_RUf-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="350" />
+              <mxPoint x="330" y="350" />
+              <mxPoint x="330" y="695" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="yx9G2MlZ8vXQoHSZa9hz-2" value="Settlement" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="300" width="200" height="60" as="geometry" />
@@ -148,6 +157,9 @@
         </mxCell>
         <mxCell id="NJvS3RI_Up09lAXH_RUf-8" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=2;" vertex="1" parent="1">
           <mxGeometry x="890" y="370" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NJvS3RI_Up09lAXH_RUf-9" value="data warehouse" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="350" y="630" width="90" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
