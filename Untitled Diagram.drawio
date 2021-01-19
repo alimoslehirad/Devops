@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-19T14:12:42.958Z" agent="5.0 (X11)" etag="zVgN8or_gzLTNVwJXB3J" version="14.1.8" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-01-19T14:54:21.049Z" agent="5.0 (X11)" etag="TIEs4kzciqZDprz6z1-9" version="14.1.8" type="github" pages="4">
   <diagram id="9TmfmCz-h732q6O2XP1U" name="Page-1">
     <mxGraphModel dx="1371" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -143,9 +143,6 @@
             <mxPoint x="600" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="NJvS3RI_Up09lAXH_RUf-24" value="To All Microservices" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="630" y="560" width="40" height="20" as="geometry" />
-        </mxCell>
         <mxCell id="NJvS3RI_Up09lAXH_RUf-27" value="MB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-10;" parent="1" vertex="1">
           <mxGeometry x="690" y="290" width="80" height="20" as="geometry" />
         </mxCell>
@@ -161,7 +158,7 @@
         <mxCell id="NJvS3RI_Up09lAXH_RUf-34" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" parent="1" vertex="1">
           <mxGeometry x="480" y="250" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="NJvS3RI_Up09lAXH_RUf-35" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" parent="1" vertex="1">
+        <mxCell id="NJvS3RI_Up09lAXH_RUf-35" value="MB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" parent="1" vertex="1">
           <mxGeometry x="490" y="390" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="NJvS3RI_Up09lAXH_RUf-36" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-75;" parent="1" vertex="1">
@@ -217,6 +214,27 @@
         </mxCell>
         <mxCell id="yzwpfv1luLYUY1p0cAJf-13" value="MB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=15;" vertex="1" parent="1">
           <mxGeometry x="750" y="330" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="yzwpfv1luLYUY1p0cAJf-14" value="Notifier" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="145" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="yzwpfv1luLYUY1p0cAJf-16" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="yx9G2MlZ8vXQoHSZa9hz-7" target="yzwpfv1luLYUY1p0cAJf-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="170" as="sourcePoint" />
+            <mxPoint x="900" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yzwpfv1luLYUY1p0cAJf-17" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" target="yzwpfv1luLYUY1p0cAJf-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="610" y="330" as="sourcePoint" />
+            <mxPoint x="830" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yzwpfv1luLYUY1p0cAJf-18" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="850" y="155" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="yzwpfv1luLYUY1p0cAJf-19" value="restful Api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-30;" vertex="1" parent="1">
+          <mxGeometry x="690" y="250" width="90" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
