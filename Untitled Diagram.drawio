@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-18T19:30:14.659Z" agent="5.0 (X11)" etag="GH51ZrqqL_JhtWgr06C4" version="14.2.9" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-02-18T19:32:35.238Z" agent="5.0 (X11)" etag="HtpUXg8Z8Ekjeb7XqsEz" version="14.2.9" type="github" pages="6">
   <diagram id="9TmfmCz-h732q6O2XP1U" name="Page-1">
     <mxGraphModel dx="1371" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -870,6 +870,18 @@
             <mxPoint x="810" y="10" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="cFqO0pwBIyf0hZehLZ5S-72" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="Nt36V3U2hxVM1yYGZtJd-1" target="cFqO0pwBIyf0hZehLZ5S-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="795" y="230" as="sourcePoint" />
+            <mxPoint x="830" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cFqO0pwBIyf0hZehLZ5S-73" value="To all microservices" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Nt36V3U2hxVM1yYGZtJd-1">
+          <mxGeometry x="810" y="180" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cFqO0pwBIyf0hZehLZ5S-74" value="Rest" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Nt36V3U2hxVM1yYGZtJd-1">
+          <mxGeometry x="740" y="180" width="40" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
