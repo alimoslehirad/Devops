@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-18T19:36:48.375Z" agent="5.0 (X11)" etag="Z25uNSUoZKwZJPwTO9Nm" version="14.2.9" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-02-18T19:37:38.883Z" agent="5.0 (X11)" etag="cgSzSKP7jQb0UEPDyZNM" version="14.2.9" type="github" pages="6">
   <diagram id="9TmfmCz-h732q6O2XP1U" name="Page-1">
     <mxGraphModel dx="1371" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#FFFFFF" math="0" shadow="0">
       <root>
@@ -878,7 +878,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="cFqO0pwBIyf0hZehLZ5S-73" value="To all microservices" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Nt36V3U2hxVM1yYGZtJd-1">
-          <mxGeometry x="810" y="180" width="90" height="20" as="geometry" />
+          <mxGeometry x="800" y="170" width="90" height="20" as="geometry" />
         </mxCell>
         <mxCell id="cFqO0pwBIyf0hZehLZ5S-74" value="Rest" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Nt36V3U2hxVM1yYGZtJd-1">
           <mxGeometry x="740" y="180" width="40" height="20" as="geometry" />
@@ -939,6 +939,12 @@
         </mxCell>
         <mxCell id="cFqO0pwBIyf0hZehLZ5S-89" value="MB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-30;" vertex="1" parent="Nt36V3U2hxVM1yYGZtJd-1">
           <mxGeometry x="960" y="270" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cFqO0pwBIyf0hZehLZ5S-91" value="Rest" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Nt36V3U2hxVM1yYGZtJd-1">
+          <mxGeometry x="730" y="590" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cFqO0pwBIyf0hZehLZ5S-92" value="To all microservices" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="Nt36V3U2hxVM1yYGZtJd-1">
+          <mxGeometry x="790" y="590" width="90" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
