@@ -18,7 +18,7 @@
    sync; echo 3 > /proc/sys/vm/drop_caches 
    ```
 
-
+how to create user and password in passwd mode with and copy to nginx user
 ```sh
     echo "kibanaadmin:`openssl passwd -apr1`" | sudo tee -a /etc/nginx/htpasswd.users
 ```
