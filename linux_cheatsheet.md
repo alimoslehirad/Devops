@@ -18,6 +18,11 @@
    sync; echo 3 > /proc/sys/vm/drop_caches 
    ```
 
+
+```sh
+    echo "kibanaadmin:`openssl passwd -apr1`" | sudo tee -a /etc/nginx/htpasswd.users
+```
+
 ## host preparation
 [plugins/onedrive/README.md][PlOd] |
 | Medium | [plugins/medium/README.md][PlMe] |
