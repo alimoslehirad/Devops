@@ -30,10 +30,41 @@
  type=rpm-md
  EOF
  ```
+- After adding the repo, import GPG key:
+```sh
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+```
+- Clear and update your YUM package index.
+```sh
+yum clean all && yum makecache
+```
+###Step 3: Install and Configure Elasticsearch
+```sh
+yum -y install elasticsearch
+```
+- Start and enable elasticsearch service on boot:
+```sh
+systemctl enable --now elasticsearch.service 
+```
+
 
 how to create user and password in passwd mode with and copy to nginx user
 ```sh
     echo "kibanaadmin:`openssl passwd -apr1`" | sudo tee -a /etc/nginx/htpasswd.users
+```
+Test to verify that it is working:
+```sh
+curl http://127.0.0.1:9200
+```
+###Step 4: Install and Configure Kibana
+```sh
+yum -y install kibana
+```
+```sh
+vim /etc/kibana/kibana.yml
+server.host: "0.0.0.0"
+server.name: "kibana.example.com"
+elasticsearch.url: "http://localhost:9200"
 ```
 
 ## host preparation
