@@ -11,7 +11,7 @@
    ```
  - install necessary package 
    ```sh
-   yum install vim net-tools link firewalld 
+  yum install vim wget curl net-tools lsof bash-completion firewalld
    ```
  - Install Java .
    ```sh
