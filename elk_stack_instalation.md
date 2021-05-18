@@ -67,6 +67,22 @@ server.name: "kibana.example.com"
 elasticsearch.url: "http://localhost:9200"
 ```
 
+```sh
+systemctl enable --now kibana
+```
+```sh
+sudo firewall-cmd --add-port=5601/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+###Step 5: Install and Configure Logstash
+- installation
+```sh
+yum -y install logstash
+```
+Logstash custom configurations can be placed under the /etc/logstash/conf.d/directory.
+
+
 ## host preparation
 [plugins/onedrive/README.md][PlOd] |
 | Medium | [plugins/medium/README.md][PlMe] |
