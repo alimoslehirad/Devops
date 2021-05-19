@@ -89,6 +89,10 @@ sudo firewall-cmd --permanent --zone=public --add-service=http
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
 ```
+selinux configuration for nginx proxy pass
+```sh
+setsebool httpd_can_network_connect 1 -P
+```
 
 ## host preparation
 [plugins/onedrive/README.md][PlOd] |
