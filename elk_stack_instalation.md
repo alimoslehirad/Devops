@@ -81,7 +81,14 @@ sudo firewall-cmd --reload
 yum -y install logstash
 ```
 Logstash custom configurations can be placed under the /etc/logstash/conf.d/directory.
-
+### install nginx
+```sh
+yum install nginx -y 
+systemctl enable nginx --now
+sudo firewall-cmd --permanent --zone=public --add-service=http 
+sudo firewall-cmd --permanent --zone=public --add-service=https
+sudo firewall-cmd --reload
+```
 
 ## host preparation
 [plugins/onedrive/README.md][PlOd] |
