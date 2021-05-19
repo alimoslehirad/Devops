@@ -89,7 +89,7 @@ sudo firewall-cmd --permanent --zone=public --add-service=http
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
 ```
-selinux configuration for nginx proxy pass
+Run the following command to allow Nginx to access the proxied service
 ```sh
 setsebool httpd_can_network_connect 1 -P
 ```
