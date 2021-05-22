@@ -79,6 +79,8 @@ sudo firewall-cmd --reload
 - installation
 ```sh
 yum -y install logstash
+/usr/share/logstash/bin/system-install /etc/logstash/startup.options systemd
+systemctl enable logstash --now
 ```
 Logstash custom configurations can be placed under the /etc/logstash/conf.d/directory.
 ### install nginx
