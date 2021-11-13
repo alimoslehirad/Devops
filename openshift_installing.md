@@ -52,9 +52,9 @@ in this example we deploy three host cluster one master and three node. master i
      ```sh
      $ vim /etc/hosts
      
-     45.135.242.8  mocm.mparsict.com
-     45.135.242.10 mocn1.mparsict.com
-     45.135.242.13 mocn2.mparsict.com
+     45.135.242.8  ocm.example.com
+     45.135.242.10 ocn1.example.com
+     45.135.242.13 ocn2.example.com
      ```
    
  - configure dns 
